@@ -1,0 +1,20 @@
+# autoup config
+# one or more `forum` entries with all fields are required
+# example settings for English and Russian vB installations
+---
+
+- forum: 'http://localhost/forum-en/'
+  user: 'username'
+  pass: 'password'
+  profile: 'http://localhost/forum-en/members/111-username/'
+  find: 'Find all threads started by username'
+  stats: 'Show All Statistics'
+  up: 'Bump the thread!'
+
+- forum: 'http://localhost/forum-ru/'
+  user: 'username'
+  pass: 'password'
+  profile: 'http://localhost/forum-ru/members/111-username/'
+  find: 'Найти все темы, созданные username'
+  stats: 'Показать всю статистику'
+  up: 'Поднять тему!'
