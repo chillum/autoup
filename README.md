@@ -5,9 +5,11 @@
 * Updates (bumps) all the posts
 * Prints to stdout the UP/SKIP status for every thread
 
-### Usage
-* Install Firefox
-* Install Ruby and `selenium-webdriver` Gem
+### Installation
+* Install [Firefox](http://www.mozilla.org/ru/firefox/new/) and
+  [Ruby](https://www.ruby-lang.org/en/installation/)
+* Install [bundler](http://bundler.io): `gem install bundler`
+* Clone this repo and run `bundle install`
 * Write a configuration file
 * Launch and check if everything's working
 
