@@ -1,5 +1,5 @@
 ## autoup script
-* Ruby+Selenium robot
+* Ruby + Selenium robot
 * Logs in onto [vBulletin](http://www.vbulletin.com) forum boards
 * Finds all user's threads
 * Updates (bumps) all the posts
