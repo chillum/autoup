@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 #
-# Ruby+Selenium robot to automate updating vBulletin posts
+# Ruby + Selenium robot to automate updating vBulletin posts
 #
 # Copyright 2014 Vasily Korytov
 #
@@ -23,10 +23,8 @@ config = YAML.load_file File.expand_path('~/.config/autoup.yml')
 config.each do |cfg|
   web = Selenium::WebDriver.for :firefox
   begin
-    web.navigate.to cfg['forum']
-
-    # TODO: need a proper timeout here
-    sleep 1
+    web.manage.timeouts.implicit_wait = 3
+    web.get cfg['forum']
 
     web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])
     login = web.find_element(:name, 'vb_login_password')
@@ -36,23 +34,17 @@ config.each do |cfg|
     # TODO: need a proper timeout here
     sleep 1
 
-    web.navigate.to cfg['profile']
+    web.get cfg['profile']
     web.find_element(:link, cfg['stats']).click
     web.find_element(:link, cfg['find']).click
 
-    # TODO: need a proper timeout here
-    sleep 1
-
     links = []
     web.find_elements(:css, 'a[id ^= "thread_title_"]').each do |link|
-      links.push link.attribute 'href'
+      links.push link.attribute('href')
     end
 
-    # TODO: need a proper timeout here
-    sleep 1
-
     links.each do |link|
-      web.navigate.to link
+      web.get link
       begin
         web.find_element(:css, "input[value = '#{cfg['up']}']").click
         puts "UP: #{link}"

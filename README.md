@@ -18,9 +18,7 @@
 * See [example](autoup.yml) for details
 
 ### TODO
-* Proper load timeout handling
 * Catch failed logins
-* Catch other errors, that apply to normal usage
+* Remove the `profile`, `find`, `stats` and `up` options (if possible)
 * Test on newer vB (currently tested on 3.8.7 only)
-* Provide a configuration option to update specific posts only
 * Make a Gem of it
