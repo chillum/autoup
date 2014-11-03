@@ -23,7 +23,7 @@ config = YAML.load_file File.expand_path('~/.config/autoup.yml')
 config.each do |cfg|
   web = Selenium::WebDriver.for :firefox
   begin
-    web.manage.timeouts.implicit_wait = 3
+    web.manage.timeouts.implicit_wait = cfg['timeout'] || 2
     web.get cfg['forum']
 
     web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])

@@ -18,3 +18,4 @@
   find: 'Найти все темы, созданные username'
   stats: 'Показать всю статистику'
   up: 'Поднять тему!'
+  timeout: 5 # this is a slow server. timeout defaults to 2
