@@ -18,7 +18,5 @@
 * See [example](autoup.yml) for details
 
 ### TODO
-* Catch failed logins
-* Remove the `profile`, `find`, `stats` and `up` options (if possible)
 * Test on newer vB (currently tested on 3.8.7 only)
 * Make a Gem of it

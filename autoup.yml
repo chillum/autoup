@@ -5,16 +5,16 @@
 - forum: 'http://localhost/forum-en/'
   user: 'username'
   pass: 'password'
-  profile: 'http://localhost/forum-en/members/111-username/'
-  find: 'Find all threads started by username'
+  logout: 'Log Out'
+  find: 'Find all threads started by'
   stats: 'Show All Statistics'
   up: 'Bump the thread!'
 
 - forum: 'http://localhost/forum-ru/'
   user: 'username'
   pass: 'password'
-  profile: 'http://localhost/forum-ru/members/111-username/'
-  find: 'Найти все темы, созданные username'
+  logout: 'Выход'
+  find: 'Найти все темы, созданные'
   stats: 'Показать всю статистику'
   up: 'Поднять тему!'
-  timeout: 5 # this is a slow server. timeout defaults to 2
+  timeout: 10 # this is a slow server. timeout defaults to 5

@@ -23,20 +23,23 @@ config = YAML.load_file File.expand_path('~/.config/autoup.yml')
 config.each do |cfg|
   web = Selenium::WebDriver.for :firefox
   begin
-    web.manage.timeouts.implicit_wait = cfg['timeout'] || 2
+    web.manage.timeouts.implicit_wait = cfg['timeout'] || 5
     web.get cfg['forum']
 
     web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])
     login = web.find_element(:name, 'vb_login_password')
     login.send_keys cfg['pass']
     login.submit
-    # TODO: does not catch failed logins
-    # TODO: need a proper timeout here
-    sleep 1
 
-    web.get cfg['profile']
+    begin
+      web.find_element(:link, cfg['user']).click
+    rescue Selenium::WebDriver::Error::NoSuchElementError
+      puts "ERROR: unable to login on #{cfg['forum']} as #{cfg['user']}"
+      next
+    end
+
     web.find_element(:link, cfg['stats']).click
-    web.find_element(:link, cfg['find']).click
+    web.find_element(:link, "#{cfg['find']} #{cfg['user']}").click
 
     links = []
     web.find_elements(:css, 'a[id ^= "thread_title_"]').each do |link|
