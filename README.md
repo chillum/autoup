@@ -1,4 +1,4 @@
-## autoup
+## autoup [![Gem Version](https://badge.fury.io/rb/autoup.svg)](http://badge.fury.io/rb/autoup)
 * Ruby + Selenium robot
 * Logs in onto [vBulletin](http://www.vbulletin.com) forum boards
 * Finds all user's threads
