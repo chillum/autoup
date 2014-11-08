@@ -25,22 +25,22 @@ require 'yaml'
 class AutoUp
   # Launches AutoUp (specify the config file to override the default)
   def initialize(yml = File.expand_path('~/.config/autoup.yml'))
-    config = YAML.load_file yml
-    config.each do |cfg|
+    config = YAML.load_file(yml)
+    config.each { |cfg|
       web = Selenium::WebDriver.for :firefox
       begin
         web.manage.timeouts.implicit_wait = cfg['timeout'] || 5
-        web.get cfg['forum']
+        web.get(cfg['forum'])
 
         web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])
         login = web.find_element(:name, 'vb_login_password')
-        login.send_keys cfg['pass']
+        login.send_keys(cfg['pass'])
         login.submit
 
         begin
           web.find_element(:link, cfg['user']).click
         rescue Selenium::WebDriver::Error::NoSuchElementError
-          puts "ERROR: unable to login as #{cfg['user']} on #{cfg['forum']}"
+          puts("ERROR: unable to login as #{cfg['user']} on #{cfg['forum']}")
           next
         end
 
@@ -48,22 +48,22 @@ class AutoUp
         web.find_element(:link, "#{cfg['find']} #{cfg['user']}").click
 
         links = []
-        web.find_elements(:css, 'a[id ^= "thread_title_"]').each do |link|
+        web.find_elements(:css, 'a[id ^= "thread_title_"]').each { |link|
           links.push link.attribute('href')
-        end
+        }
 
-        links.each do |link|
-          web.get link
+        links.each { |link|
+          web.get(link)
           begin
             web.find_element(:css, "input[value = '#{cfg['up']}']").click
-            puts "UP: #{link}"
+            puts("UP: #{link}")
           rescue Selenium::WebDriver::Error::NoSuchElementError
-            puts "SKIP: #{link}"
+            puts("SKIP: #{link}")
           end
-        end
+        }
       ensure
         web.quit
       end
-    end
+    }
   end
 end
