@@ -104,6 +104,7 @@ class AutoUp
     puts("ERROR: #{arg} attribute is required. Example configuration:")
     puts_url
   end
+
   def puts_url
     puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
   end
