@@ -35,15 +35,18 @@ class AutoUp
     config.each { |cfg|
       # Required settings
       unless cfg['forum']
-        puts('ERROR: `forum` attribute is required')
+        puts('ERROR: `forum` attribute is required. Example configuration:')
+        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
         next
       end
       unless cfg['user']
-        puts('ERROR: `user` attribute is required')
+        puts('ERROR: `user` attribute is required. Example configuration:')
+        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
         next
       end
       unless cfg['pass']
-        puts('ERROR: `pass` attribute is required')
+        puts('ERROR: `pass` attribute is required. Example configuration:')
+        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
         next
       end
       # Optional settings
