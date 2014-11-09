@@ -1,18 +1,24 @@
-# autoup config
-# one or more `forum` entries with all fields are required
-# example settings for English and Russian vB installations
+# autoup config: ~/.config/autoup.yml
+# include one or more `forum` items
 
+# minimal setup
+- forum: 'http://localhost/forum-en/'
+  user: 'username'
+  pass: 'password'
+
+# defaults expanded
 - forum: 'http://localhost/forum-en/'
   user: 'username'
   pass: 'password'
   find: 'Find all threads started by'
   stats: 'Show All Statistics'
   up: 'Bump the thread!'
+  timeout: 5
 
+# Russian board example
 - forum: 'http://localhost/forum-ru/'
   user: 'username'
   pass: 'password'
   find: 'Найти все темы, созданные'
   stats: 'Показать всю статистику'
   up: 'Поднять тему!'
-  timeout: 10 # this is a slow server. timeout defaults to 5

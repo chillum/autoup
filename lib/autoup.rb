@@ -25,14 +25,45 @@ require 'yaml'
 class AutoUp
   # Launches AutoUp (specify the config file to override the default)
   def initialize(yml = File.expand_path('~/.config/autoup.yml'))
-    config = YAML.load_file(yml)
+    begin
+      config = YAML.load_file(yml)
+    rescue Errno::ENOENT
+      puts('ERROR: no configuration file at `~/.config/autoup.yml`. Example:')
+      puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
+      return
+    end
     config.each { |cfg|
+      # Required settings
+      unless cfg['forum']
+        puts('ERROR: `forum` attribute is required')
+        next
+      end
+      unless cfg['user']
+        puts('ERROR: `user` attribute is required')
+        next
+      end
+      unless cfg['pass']
+        puts('ERROR: `pass` attribute is required')
+        next
+      end
+      # Optional settings
+      cfg['timeout'] ||= 5
+      cfg['find']    ||= 'Find all threads started by'
+      cfg['stats']   ||= 'Show All Statistics'
+      cfg['up']      ||= 'Bump the thread!'
+
       web = Selenium::WebDriver.for :firefox
       begin
-        web.manage.timeouts.implicit_wait = cfg['timeout'] || 5
+        web.manage.timeouts.implicit_wait = cfg['timeout']
         web.get(cfg['forum'])
 
-        web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])
+        begin
+          web.find_element(:name, 'vb_login_username').send_keys(cfg['user'])
+        rescue Selenium::WebDriver::Error::NoSuchElementError
+          puts("ERROR: unable to load #{cfg['forum']} (does not load or does not contain vb_login_username)")
+          next
+        end
+
         login = web.find_element(:name, 'vb_login_password')
         login.send_keys(cfg['pass'])
         login.submit
