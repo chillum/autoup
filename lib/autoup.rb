@@ -28,25 +28,22 @@ class AutoUp
     begin
       config = YAML.load_file(yml)
     rescue Errno::ENOENT
-      puts('ERROR: no configuration file at `~/.config/autoup.yml`. Example:')
-      puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
+      puts("ERROR: no configuration file at #{yml}. Example:")
+      puts_url
       return
     end
     config.each { |cfg|
       # Required settings
       unless cfg['forum']
-        puts('ERROR: `forum` attribute is required. Example configuration:')
-        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
+        puts_required('forum')
         next
       end
       unless cfg['user']
-        puts('ERROR: `user` attribute is required. Example configuration:')
-        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
+        puts_required('user')
         next
       end
       unless cfg['pass']
-        puts('ERROR: `pass` attribute is required. Example configuration:')
-        puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
+        puts_required('pass')
         next
       end
       # Optional settings
@@ -99,5 +96,15 @@ class AutoUp
         web.quit
       end
     }
+  end
+
+  private
+
+  def puts_required(arg)
+    puts("ERROR: #{arg} attribute is required. Example configuration:")
+    puts_url
+  end
+  def puts_url
+    puts('https://github.com/chillum/autoup/blob/master/examples/autoup.yml')
   end
 end
