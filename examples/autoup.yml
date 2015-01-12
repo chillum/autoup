@@ -4,23 +4,23 @@
 # Include one or more `forum` items.
 
 # Minimal setup:
-- forum: 'http://localhost/forum-en/'
-  user: 'username'
-  pass: 'password'
+- forum:   http://localhost/forum-en/
+  user:    username
+  pass:    password
 
 # Defaults expanded:
-- forum: 'http://localhost/forum-en/'
-  user: 'username'
-  pass: 'password'
-  find: 'Find all threads started by'
-  stats: 'Show All Statistics'
-  up: 'Bump the thread!'
+- forum:   http://localhost/forum-en/
+  user:    username
+  pass:    password
+  find:    Find all threads started by
+  stats:   Show All Statistics
+  up:      Bump the thread!
   timeout: 5
 
 # Russian board example:
-- forum: 'http://localhost/forum-ru/'
-  user: 'username'
-  pass: 'password'
-  find: 'Найти все темы, созданные'
-  stats: 'Показать всю статистику'
-  up: 'Поднять тему!'
+- forum:   http://localhost/forum-ru/
+  user:    username
+  pass:    password
+  find:    Найти все темы, созданные
+  stats:   Показать всю статистику
+  up:      Поднять тему!
