@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = 'autoup'
-  s.version      = '1.0'
+  s.version      = '1.0.1'
   s.summary      = 'Selenium robot for auto-bumping vBulletin posts'
   s.description  = "Logs in onto vBulletin forum boards, finds all user's threads and bumps all the posts"
   s.homepage     = 'https://github.com/chillum/autoup'
