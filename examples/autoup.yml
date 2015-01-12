@@ -3,12 +3,12 @@
 
 # Include one or more `forum` items:
 
-# minimal setup
+# Minimal setup:
 - forum: 'http://localhost/forum-en/'
   user: 'username'
   pass: 'password'
 
-# defaults expanded
+# Defaults expanded:
 - forum: 'http://localhost/forum-en/'
   user: 'username'
   pass: 'password'
@@ -17,7 +17,7 @@
   up: 'Bump the thread!'
   timeout: 5
 
-# Russian board example
+# Russian board example:
 - forum: 'http://localhost/forum-ru/'
   user: 'username'
   pass: 'password'
