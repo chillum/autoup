@@ -1,7 +1,7 @@
 # autoup config: ~/.config/autoup.yml
 # Public domain
 
-# Include one or more `forum` items:
+# Include one or more `forum` items.
 
 # Minimal setup:
 - forum: 'http://localhost/forum-en/'
