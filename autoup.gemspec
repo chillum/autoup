@@ -10,5 +10,5 @@ Gem::Specification.new do |s|
   s.files        = %w(NOTICE README.md examples/autoup.yml lib/autoup.rb)
   s.executables  << 'autoup'
   s.add_dependency 'selenium-webdriver', '~> 2.45'
-  s.required_ruby_version              = '>= 1.9'
+  s.required_ruby_version              = '>= 1.9.2'
 end
