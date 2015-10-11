@@ -59,7 +59,7 @@ class AutoUp
 
     begin
       login = web.find_element(:name, 'vb_login_username')
-      login.clear()
+      login.clear
       login.send_keys(cfg['user'])
     rescue Selenium::WebDriver::Error::NoSuchElementError
       puts("ERROR: unable to load #{cfg['forum']} (does not load or does not contain vb_login_username)")
@@ -67,7 +67,7 @@ class AutoUp
     end
 
     pass = web.find_element(:name, 'vb_login_password')
-    pass.clear()
+    pass.clear
     pass.send_keys(cfg['pass'])
     pass.submit
 
