@@ -39,7 +39,7 @@ class AutoUp
       return
     end
     # Optional settings
-    cfg['timeout'] ||= 5
+    cfg['timeout'] ||= 10
     cfg['find']    ||= 'Find all threads started by'
     cfg['stats']   ||= 'Show All Statistics'
     cfg['up']      ||= 'Bump the thread!'

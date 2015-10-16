@@ -15,7 +15,7 @@
   find:    Find all threads started by
   stats:   Show All Statistics
   up:      Bump the thread!
-  timeout: 5
+  timeout: 10
 
 # Russian board example:
 - forum:   http://localhost/forum-ru/
