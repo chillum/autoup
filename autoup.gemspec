@@ -1,4 +1,4 @@
-require_relative 'lib/autoup/version.rb'
+require_relative 'version.rb'
 
 Gem::Specification.new do |s|
   s.name         = 'autoup'

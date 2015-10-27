@@ -8,6 +8,7 @@ require 'yaml'
 # Docs: https://github.com/chillum/autoup/blob/master/README.md
 #
 # Offline copies of README and example config are also included in this gem.
+#
 class AutoUp
   # Read config file and launch AutoUp (specify the config file to override the default).
   def initialize(yml = File.expand_path('~/.config/autoup.yml'))
