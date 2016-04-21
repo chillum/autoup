@@ -6,8 +6,7 @@
 * Prints to stdout the UP/SKIP status for every thread
 
 ### Installation
-* Install [Firefox](http://www.mozilla.org/firefox/new/) and
-  [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+* Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [PhantomJS](http://phantomjs.org/)
 * Run `gem install autoup`
 * Write a [configuration file](examples/autoup.yml) to `~/.config/autoup.yml`
 * Run `autoup` and check if everything's working

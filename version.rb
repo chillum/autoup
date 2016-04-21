@@ -1,3 +1,3 @@
 class AutoUp
-  Version = '1.0.5'
+  Version = '1.1.0'
 end

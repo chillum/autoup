@@ -45,7 +45,7 @@ class AutoUp
     cfg['stats']   ||= 'Show All Statistics'
     cfg['up']      ||= 'Bump the thread!'
 
-    web = Selenium::WebDriver.for :firefox
+    web = Selenium::WebDriver.for :phantomjs
     begin
       browse(web, cfg)
     ensure
