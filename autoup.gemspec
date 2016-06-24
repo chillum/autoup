@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.homepage     = 'https://github.com/chillum/autoup'
   s.license      = 'Apache-2.0'
   s.author       = 'Vasily Korytov'
-  s.email        = 'vasily.korytov@yandex.com'
+  s.email        = 'vasily.korytov@icloud.com'
   s.files        = %w(NOTICE README.md examples/autoup.yml lib/autoup.rb)
   s.executables  << 'autoup'
   s.add_dependency 'selenium-webdriver', '~> 2.53'
