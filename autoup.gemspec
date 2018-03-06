@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.email        = 'vasily.korytov@icloud.com'
   s.files        = %w(NOTICE README.md examples/autoup.yml lib/autoup.rb)
   s.executables  << 'autoup'
-  s.add_dependency 'selenium-webdriver', '~> 3.3'
+  s.add_dependency 'selenium-webdriver',  '= 3.5.2'
   s.required_ruby_version              = '>= 1.9.2'
 end
